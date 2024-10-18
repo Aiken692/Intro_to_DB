@@ -1,16 +1,14 @@
 -- Use the alx_book_store database
 USE alx_book_store;
 
--- Query to get full description of the books table
+-- Select the full description of the table Books
 SELECT 
-    COLUMN_NAME AS 'Field',
-    COLUMN_TYPE AS 'Type',
-    IS_NULLABLE AS 'Null',
-    COLUMN_KEY AS 'Key',
-    DEFAULT AS 'Default',
-    EXTRA AS 'Extra'
+    COLUMN_NAME,
+    DATA_TYPE,
+    IS_NULLABLE,
+    COLUMN_DEFAULT,
+    CHARACTER_MAXIMUM_LENGTH
 FROM 
-    information_schema.COLUMNS 
+    INFORMATION_SCHEMA.COLUMNS 
 WHERE 
-    TABLE_SCHEMA = 'alx_book_store' 
-    AND TABLE_NAME = 'books';
+    TABLE_NAME = 'Books' AND TABLE_SCHEMA = 'alx_book_store';
